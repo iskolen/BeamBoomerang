@@ -19,8 +19,16 @@ public class BallController : MonoBehaviour
         _rb.bodyType = RigidbodyType2D.Static;
     }
 
+    public bool IsMoving()
+    {
+        // Проверка, движется ли мяч
+        return _rb.velocity.magnitude > 0.1f;
+    }
+
     public void Swipe(Vector2 startMousePosition, Vector2 endMousePosition)
     {
+        if (IsMoving()) return; // Если мяч уже движется, свайп игнорируется
+
         Vector2 direction = endMousePosition - startMousePosition;
         float swipeDistance = direction.magnitude;
 

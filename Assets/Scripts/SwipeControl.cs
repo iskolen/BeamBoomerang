@@ -9,6 +9,8 @@ public class SwipeControl : MonoBehaviour
 
     void Update()
     {
+        if (ballController.IsMoving()) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             _startMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
