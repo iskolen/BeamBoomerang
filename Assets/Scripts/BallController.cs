@@ -10,7 +10,7 @@ public class BallController : MonoBehaviour
     private bool isSwipeMade = false;
 
     public Color idleColor = Color.white;
-    public Color swipeCompleteColor = Color.green;
+    public Color swipeCompleteColor = Color.white;
 
     void Start()
     {

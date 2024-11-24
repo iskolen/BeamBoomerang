@@ -15,13 +15,15 @@ public class GameManager : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GeneralMenu");
     }
 
     public void Win()
     {
         winCanvas.SetActive(true);
         Time.timeScale = 0;
+
+        AudioManager.Instance.PlayWinSound();
     }
 
     public void NextLevel()
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
     {
         loseCanvas.SetActive(true);
         Time.timeScale = 0;
+
+        AudioManager.Instance.PlayLoseSound();
     }
 
     public void RestartLevel()

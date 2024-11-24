@@ -5,7 +5,7 @@ public class LevelSelectionController : MonoBehaviour
 {
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GeneralMenu");
     }
 
     public void LoadLevel(string levelName)
