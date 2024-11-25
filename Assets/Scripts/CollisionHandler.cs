@@ -15,25 +15,23 @@ public class CollisionHandler : MonoBehaviour
             bounceCount++;
             UpdateBounceText();
 
-            AudioManager.Instance.PlayCollisionSound();
-
             if (bounceCount >= maxBounces)
             {
                 gameManager.Lose();
             }
+            AudioManager.Instance.PlayCollisionSound();
         }
         if (collision.gameObject.CompareTag("DangerWall"))
         {
-            AudioManager.Instance.PlayCollisionSound();
-
             gameManager.Lose();
+            AudioManager.Instance.PlayCollisionSound();
         }
     }
     void UpdateBounceText()
     {
         if (bounceText != null)
         {
-            bounceText.text = "Отскоки: " + bounceCount + " / " + maxBounces;
+            bounceText.text = "РћС‚СЃРєРѕРєРё: " + bounceCount + " / " + maxBounces;
         }
     }
 }

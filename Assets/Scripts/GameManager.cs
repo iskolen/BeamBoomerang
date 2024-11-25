@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
 
         AudioManager.Instance.PlayWinSound();
+        AudioManager.Instance.AddSoundToAllButtons();
     }
 
     public void NextLevel()
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
 
         AudioManager.Instance.PlayLoseSound();
+        AudioManager.Instance.AddSoundToAllButtons();
     }
 
     public void RestartLevel()

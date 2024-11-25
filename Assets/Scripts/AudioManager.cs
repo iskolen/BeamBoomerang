@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
         PlaySFX(loseSound);
     }
 
-    private void AddSoundToAllButtons()
+    public void AddSoundToAllButtons()
     {
         Button[] buttons = FindObjectsOfType<Button>();
 
