@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FinishZone : MonoBehaviour
+public class Finish : MonoBehaviour
 {
     public GameManager gameManager;
 

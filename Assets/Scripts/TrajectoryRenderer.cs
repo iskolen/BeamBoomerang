@@ -28,14 +28,16 @@ public class TrajectoryRenderer : MonoBehaviour
         for (int i = 0; i < trajectoryPointsCount; i++)
         {
             float time = i * timeStep;
-            Vector2 point = CalculateTrajectoryPointWithoutGravity(ballController.transform.position, velocity, time);
+            Vector2 point = CalculateTrajectoryPoint(ballController.transform.position, velocity, time);
             lineRenderer.SetPosition(i, point);
         }
     }
 
-    Vector2 CalculateTrajectoryPointWithoutGravity(Vector2 startPosition, Vector2 initialVelocity, float time)
+    Vector2 CalculateTrajectoryPoint(Vector2 startPosition, Vector2 initialVelocity, float time)
     {
-        Vector2 displacement = initialVelocity * time;
+        // s = ut + 1/2 * a * t^2, where a is gravity in the 2D physics world.
+        Vector2 gravity = Physics2D.gravity;
+        Vector2 displacement = initialVelocity * time + 0.5f * gravity * time * time;
         return startPosition + displacement;
     }
 }
